@@ -1,0 +1,13 @@
+.gradle
+**/build
+**/out
+
+## IntelliJ
+.idea
+.DS_Store
+
+## File-based project format:
+*.iml
+*.ipr
+*.iws
+*.config
