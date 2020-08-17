@@ -14,6 +14,10 @@ jobs:
       - checkout
       - setup_remote_docker:
          version: 19.03.12
-      - run: ./selenoid_start.sh
+      - run: ./selenoid_start.sh && sleep 100
       - run: docker ps
+      - run:
+         name: Check selenoid
+         command: curl http://127.0.0.1:4444/status
+         when: always
       - run: ./gradlew clean test

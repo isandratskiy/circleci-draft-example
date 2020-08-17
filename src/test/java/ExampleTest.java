@@ -14,7 +14,7 @@ public class ExampleTest {
     static void setup() {
         baseUrl = "https://the-internet.herokuapp.com";
         browser = "chrome";
-        remote = "http://0.0.0.0:4444/wd/hub";
+        remote = "http://127.0.0.1:4444/wd/hub";
     }
 
     @Test
