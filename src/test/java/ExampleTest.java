@@ -1,20 +1,20 @@
-import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.AuthenticationType.BASIC;
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.openqa.selenium.By.tagName;
 
-@Disabled
 public class ExampleTest {
 
     @BeforeAll
     static void setup() {
-        Configuration.baseUrl = "https://the-internet.herokuapp.com";
+        baseUrl = "https://the-internet.herokuapp.com";
+        browser = "chrome";
+        remote = "http://0.0.0.0:4444/wd/hub";
     }
 
     @Test
