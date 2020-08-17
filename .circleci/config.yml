@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     java:
-      version: oraclejdk8
+      version: oraclejdk11
 
     working_directory: ~/repo/project
 
@@ -13,6 +13,6 @@ jobs:
 
     steps:
       - checkout
-      - run: ./selenoid_start.sh
+      #- run: ./selenoid_start.sh
       - run: docker ps
       - run: ./gradlew clean test
