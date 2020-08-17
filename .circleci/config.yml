@@ -12,6 +12,8 @@ jobs:
 
     steps:
       - checkout
+      - setup_remote_docker:
+         version: 19.03.12
       - run: ./selenoid_start.sh
       - run: docker ps
       - run: ./gradlew clean test
