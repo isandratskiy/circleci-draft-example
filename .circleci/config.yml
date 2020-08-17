@@ -3,7 +3,7 @@ jobs:
   build:
     machine: true
     java:
-      version: oraclejdk11
+      version: oraclejdk8
 
     working_directory: ~/repo/project
 
