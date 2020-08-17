@@ -17,17 +17,3 @@ services:
       ]
     ports:
       - "4444:4444"
-
-  selenoid-ui:
-    container_name: selenoid-ui
-    network_mode: bridge
-    image: "aerokube/selenoid-ui:latest-release"
-    depends_on:
-      - selenoid
-    links:
-      - selenoid
-    command: [
-      "--selenoid-uri", "http://selenoid:4444"
-      ]
-    ports:
-      - "8081:8080"
