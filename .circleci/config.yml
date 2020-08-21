@@ -13,8 +13,10 @@ jobs:
 
     steps:
       - checkout
+
       - run: ./selenoid_start.sh
+
       - run: ./gradlew clean test && ./gradlew allureReport
 
-    - store_artifacts:
-        path: ./build/reports/allure-report
+      - store_artifacts:
+         path: ./build/reports/allure-report
