@@ -5,6 +5,7 @@ import static com.codeborne.selenide.AuthenticationType.BASIC;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.CHROME;
 import static org.apache.commons.lang3.RandomStringUtils.randomAlphabetic;
 import static org.openqa.selenium.By.tagName;
 
@@ -13,7 +14,7 @@ public class ExampleTest {
     @BeforeAll
     static void setup() {
         baseUrl = "https://the-internet.herokuapp.com";
-        browser = "chrome";
+        browser = CHROME;
         remote = "http://127.0.0.1:4444/wd/hub";
     }
 
