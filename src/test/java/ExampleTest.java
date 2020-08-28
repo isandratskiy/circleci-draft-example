@@ -26,6 +26,7 @@ public class ExampleTest {
 
     @Test
     void canPassForgotPassword() {
+        var hui = "hui";
         open("/forgot_password");
         $("#email").val(randomAlphabetic(5) + "@icloude.com");
         $("#form_submit").click();

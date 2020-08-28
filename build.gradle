@@ -36,7 +36,7 @@ tasks.withType(Test) {
 
     retry {
         maxRetries = 1
-        maxFailures = 10
+        maxFailures = 5
         failOnPassedAfterRetry = false
     }
 }
