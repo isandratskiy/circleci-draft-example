@@ -2,15 +2,10 @@ version: 2
 jobs:
   build:
     machine: true
-    #java:
-    #  version: oraclejdk8
-
     working_directory: ~/repo/project
-
     environment:
       JVM_OPTS: -Xmx3200m
       TERM: dumb
-
     steps:
       - checkout
       - run:
@@ -22,21 +17,16 @@ jobs:
             rm -f /tmp/openjdk-11.tar.gz
             sudo sh -c 'for bin in /usr/lib/jvm/jdk-11.0.6+10/bin/*; do update-alternatives --install /usr/bin/$(basename $bin) $(basename $bin) $bin 100; done'
             sudo sh -c 'for bin in /usr/lib/jvm/jdk-11.0.6+10/bin/*; do update-alternatives --set $(basename $bin) $bin; done'
-
       - run:
           name: Start up Selenoid environment
           command: ./selenoid_start.sh
-
       - run:
           name: Run tests
           command: ./gradlew clean test
-
       - run:
           name: Generate Allure report
           command: ./gradlew allureReport
-
       - store_test_results:
           path: ./build/test-results
-
       - store_artifacts:
           path: ./build/reports/allure-report
